@@ -14,7 +14,7 @@ This project requires a little [configuration](AWS.md) to be used in AWS.
 ## Execution
 1. Git-clone this repository.
 
-        $ git clone git@github.com:ocelotconsulting/letsencrypt-iam-lambda.git
+        $ git clone git@github.com:ocelotconsulting/letsencrypt-elb-lambda.git
 
 2. Modify configuration (TBD).
 
