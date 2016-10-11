@@ -22,4 +22,5 @@ This project requires a little [configuration](AWS.md) to be used in AWS.
 
         $ sbt clean assembly
 
-4. Upload JAR for JVM Lambda to AWS.
+4. Upload JAR for JVM Lambda to AWS. In handler configuration, use the string for the public handler function
+`com.ocelotconsulting.ssl.IAMServerCertificateLambda::configureIAMCert`
