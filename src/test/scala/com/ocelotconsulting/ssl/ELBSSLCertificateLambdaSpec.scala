@@ -5,7 +5,6 @@ import scala.collection.JavaConverters._
 
 import com.amazonaws.services.lambda.runtime.events.SNSEvent
 import com.amazonaws.services.lambda.runtime.events.SNSEvent.{SNS, SNSRecord}
-import com.amazonaws.services.s3.event.S3EventNotification.S3Entity
 import com.fasterxml.jackson.databind.{DeserializationFeature, JsonNode, ObjectMapper}
 import com.fasterxml.jackson.module.scala.DefaultScalaModule
 import com.fasterxml.jackson.module.scala.experimental.ScalaObjectMapper

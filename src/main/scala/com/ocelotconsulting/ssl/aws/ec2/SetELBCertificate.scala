@@ -1,7 +1,7 @@
 package com.ocelotconsulting.ssl.aws.ec2
 
-import com.amazonaws.services.elasticloadbalancing.{AmazonElasticLoadBalancing, AmazonElasticLoadBalancingClient}
 import com.amazonaws.services.elasticloadbalancing.model.{SetLoadBalancerListenerSSLCertificateRequest, SetLoadBalancerListenerSSLCertificateResult}
+import com.amazonaws.services.elasticloadbalancing.{AmazonElasticLoadBalancing, AmazonElasticLoadBalancingClient}
 
 /**
   * Created by Larry Anderson on 10/8/16.

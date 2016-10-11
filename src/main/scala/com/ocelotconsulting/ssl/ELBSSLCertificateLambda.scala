@@ -1,22 +1,17 @@
 package com.ocelotconsulting.ssl
 
-import scala.collection.JavaConversions._
-
 import com.amazonaws.services.elasticloadbalancing.model.SetLoadBalancerListenerSSLCertificateResult
 import com.amazonaws.services.lambda.runtime.events.SNSEvent
 import com.amazonaws.services.s3.event.S3EventNotification
-import com.amazonaws.services.s3.event.S3EventNotification.{S3Entity, S3EventNotificationRecord}
-import com.fasterxml.jackson.databind.{DeserializationFeature, ObjectMapper}
-import com.fasterxml.jackson.module.scala.DefaultScalaModule
-import com.fasterxml.jackson.module.scala.experimental.ScalaObjectMapper
+import com.amazonaws.services.s3.event.S3EventNotification.S3Entity
 import com.ocelotconsulting.ssl.aws.ec2.SetELBCertificate
+
+import scala.collection.JavaConversions._
 
 /**
   * Created by Larry Anderson on 10/11/16.
   */
 class ELBSSLCertificateLambda {
-  val mapper = new ObjectMapper() with ScalaObjectMapper
-  mapper.registerModule(DefaultScalaModule).configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false)
 
   private def extractS3Event(snsRecord: SNSEvent.SNSRecord): S3EventNotification = S3EventNotification.parseJson(snsRecord.getSNS.getMessage)
 
