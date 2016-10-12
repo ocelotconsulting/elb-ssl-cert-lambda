@@ -5,9 +5,6 @@ in AWS Classic Elastic Load Balancer (ELB). This project will serve as a follow-
 [node-letsencrypt-lambda](https://github.com/ocelotconsulting/node-letsencrypt-lambda), helping to
 further the automation of configuring SSL certificates in AWS.
 
-## Status
-Just begun, please check back... 10-11-2016
-
 ## AWS Configuration
 This project requires a little [configuration](AWS.md) to be used in AWS.
 
@@ -23,4 +20,4 @@ This project requires a little [configuration](AWS.md) to be used in AWS.
         $ sbt clean assembly
 
 4. Upload JAR for JVM Lambda to AWS. In handler configuration, use the string for the public handler function
-`com.ocelotconsulting.ssl.IAMServerCertificateLambda::configureIAMCert`
+`com.ocelotconsulting.ssl.ELBSSLCertificateLambda::configureELBCert`

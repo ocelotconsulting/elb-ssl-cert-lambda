@@ -1,8 +1,5 @@
 package com.ocelotconsulting.ssl
 
-import scala.collection.JavaConversions._
-import scala.collection.JavaConverters._
-
 import com.amazonaws.services.lambda.runtime.events.SNSEvent
 import com.amazonaws.services.lambda.runtime.events.SNSEvent.{SNS, SNSRecord}
 import com.fasterxml.jackson.databind.{DeserializationFeature, JsonNode, ObjectMapper}
@@ -10,6 +7,8 @@ import com.fasterxml.jackson.module.scala.DefaultScalaModule
 import com.fasterxml.jackson.module.scala.experimental.ScalaObjectMapper
 import org.scalatest.{FlatSpec, Matchers}
 
+import scala.collection.JavaConversions._
+import scala.collection.JavaConverters._
 import scala.io.Source
 
 /**
@@ -37,6 +36,6 @@ class ELBSSLCertificateLambdaSpec extends FlatSpec with Matchers {
   "An S3 event" should "run lambda successfully" in {
     val mainObj = new ELBSSLCertificateLambda
     val something = mainObj.configureELBCert(toEvent)
-    something.asScala.head shouldBe "Status code for setting arn:aws:iam::316254774545:server-certificate/ocelotconsulting-demo.com ELB certificate for myelb is 200."
+    something.asScala.head shouldBe "Status code for setting arn:aws:iam::my_acct:server-certificate/ocelotconsulting-demo.com ELB certificate for myelb is 200."
   }
 }
